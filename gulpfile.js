@@ -19,6 +19,12 @@ $.path.task.forEach(function(taskPath) {
   require(taskPath)();
 });
 
+$.gulp.task('sprites', $.gulp.parallel(
+    'sprite-gif',
+    'sprite-png',
+    'sprite-svg'
+));
+
 $.gulp.task('default', $.gulp.series(
   'clean',
   $.gulp.parallel(
