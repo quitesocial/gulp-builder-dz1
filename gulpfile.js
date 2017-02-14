@@ -21,23 +21,26 @@ $.path.task.forEach(function(taskPath) {
 
 $.gulp.task('sprites', $.gulp.parallel(
     'sprite-gif',
-    'sprite-png',
-    'sprite-svg'
+    'sprite-png'
 ));
 
 $.gulp.task('default', $.gulp.series(
-  'clean',
-  $.gulp.parallel(
-    'sass',
-    'pug',
-    'js:foundation',
-    'js:process',
-    'copy:image',
-    'css:foundation',
-    'sprite:svg'
-  ),
-  $.gulp.parallel(
-    'watch',
-    'serve'
-  )
+    'clean',
+    $.gulp.parallel(
+        'sprite-gif',
+        'sprite-png'
+    ),
+    $.gulp.parallel(
+        'sass',
+        'pug',
+        'js:foundation',
+        'js:process',
+        'copy:image',
+        'css:foundation',
+        'sprite:svg'
+    ),
+    $.gulp.parallel(
+        'watch',
+        'serve'
+    )
 ));

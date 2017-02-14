@@ -2,11 +2,11 @@
 
 module.exports = function() {
     $.gulp.task('sprite-gif', function() {
-        return $.gulp.src('./source/images/*.gif')
+        return $.gulp.src('./source/images/**/*.gif')
             .pipe($.gp.spritesmith({
                 imgName: 'sprite.gif',
-                cssName: 'sprite.css'
+                cssName: 'sprite-gif.css'
             }))
-            .pipe($.gulp.dest($.config.root + '/assets/images'));
+            .pipe($.gulp.dest($.config.root + '/assets/img'));
     });
 };
