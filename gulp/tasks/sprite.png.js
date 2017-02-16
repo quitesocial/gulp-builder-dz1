@@ -7,6 +7,6 @@ module.exports = function() {
                 imgName: 'sprite.png',
                 cssName: 'sprite-png.css'
             }))
-            .pipe($.gulp.dest($.config.root + '/assets/img'));
+            .pipe($.gulp.dest($.config.root + '/assets/images'));
     });
 };
